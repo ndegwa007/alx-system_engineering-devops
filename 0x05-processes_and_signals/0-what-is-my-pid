@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-echo "$!"
+# script showing the pid of a process
+
+echo $$
