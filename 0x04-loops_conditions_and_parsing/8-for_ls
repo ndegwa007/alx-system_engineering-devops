@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# script displays content of the current directory
 for file in *
 do
   if [ ! -d "$file" ] && [ "${file:0:1}" != "." ]; then
