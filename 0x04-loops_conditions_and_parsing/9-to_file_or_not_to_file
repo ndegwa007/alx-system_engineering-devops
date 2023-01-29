@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# script checks school file existence and contents also checks if it is a regular file
 if [ -e "school" ]; then
   echo "school file exists"
   if [ -s "school" ]; then
