@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# script that connects to my server using a private key
+
+# set variables
+server="54.237.94.196"
+key-file="~/.ssh/school"
+user="ubuntu"
+
+#connect via ssh
+ssh -i "$key-file" "$user@$server"
