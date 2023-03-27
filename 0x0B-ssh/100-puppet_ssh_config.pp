@@ -1,6 +1,6 @@
-# manifest setting up an SSH config file to connect to a server without password
+# Configure the SSH client to use passwordless authentication
+# using the private key ~/.ssh/school.
 
-class ssh_config {
   file { '/etc/ssh/ssh_config':
     ensure  => file,
     owner   => 'root',
@@ -12,5 +12,5 @@ class ssh_config {
         PasswordAuthentication no
     ",
   }
-}
+
 
