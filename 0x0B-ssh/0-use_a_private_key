@@ -3,8 +3,7 @@
 
 # set variables
 server="54.237.94.196"
-keyfile="~/.ssh/school"
 user="ubuntu"
 
 #connect via ssh
-ssh -i $keyfile $user@$server
+ssh -i ~/.ssh/school $user@$server
