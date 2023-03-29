@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# script installs nginx to the server
+
+sudo apt-get update
+sudo apt-get -y install nginx
+
+
+# Modify the default server configuration file to return "Hello World"
+sudo sed -i "s|root /var/www/html;|root /var/www/html;\n\treturn 200 'Hello World!\n';|" /etc/nginx/sites-available/default
+
+#start server
+sudo service nginx restart 
