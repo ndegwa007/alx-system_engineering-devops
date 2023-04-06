@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# set up a nginx server on a remote server
 # update apt cache
 sudo apt update
 
