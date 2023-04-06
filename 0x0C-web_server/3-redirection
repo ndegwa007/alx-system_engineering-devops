@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Install nginx server
+sudo apt update
+sudo apt install -y nginx
+
+# Set up redirection
+sudo sed -i'.bak2' '/server_name localhost;/a \    location \/redirect_me {\n        return 301;\n    }' /etc/nginx/sites-available/default
+
+# Restart nginx
+sudo service nginx restart
+
