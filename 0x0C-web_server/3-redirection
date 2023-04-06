@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# sets a redirection in the location /redirect_me
 # Install nginx server
 sudo apt update
 sudo apt install -y nginx
