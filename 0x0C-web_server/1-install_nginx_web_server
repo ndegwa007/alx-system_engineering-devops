@@ -7,15 +7,15 @@ sudo apt update
 sudo apt install -y nginx
 
 # set port number
-port=80
+PORT=80
 
 # replace the default server configuration file with our own
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 sudo cat << EOF > /etc/nginx/sites-available/default
 server {
-    listen $port default_server;
-    listen [::]:$port default_server;
+    listen $PORT default_server;
+    listen [::]:$PORT default_server;
     root /var/www/html;
     index index.html index.htm;
     server_name localhost;
