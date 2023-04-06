@@ -1,12 +1,29 @@
 #!/usr/bin/env bash
-# script installs nginx to the server
 
-sudo apt-get update
-sudo apt-get -y install nginx
+# update apt cache
+sudo apt update
 
+# Install nginx package
+sudo apt install -y nginx
 
-# Modify the default server configuration file to return "Hello World"
-sudo sed -i "s|root /var/www/html;|root /var/www/html;\n\treturn 200 'Hello World!\n';|" /etc/nginx/sites-available/default
+# set port number
+port=80
 
-#start server
-sudo service nginx restart 
+# replace the default server configuration file with our own
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+sudo cat << EOF > /etc/nginx/sites-available/default
+server {
+    listen $port default_server;
+    listen [::]:$port default_server;
+    root /var/www/html;
+    index index.html index.htm;
+    server_name localhost;
+    location / {
+	return 200 'Hello World!\n';
+	}
+}
+EOF
+
+# restart nginx
+sudo service nginx restart
