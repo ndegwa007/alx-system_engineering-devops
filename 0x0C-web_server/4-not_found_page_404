@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# sets a redirection in the location /redirect_me
+# Install nginx server
+sudo apt update
+sudo apt install -y nginx
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/index
+# Set up redirection
+sudo sed -i'.bak3' '/server_name localhost;/a \    location \/redirect_me {\n        return 301;\n    }' /etc/nginx/sites-available/default
+
+# Restart nginx
+sudo service nginx restart

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# sets a redirection in the location /redirect_me
-# Install nginx server
-sudo apt update
-sudo apt install -y nginx
 
-# Set up redirection
-sudo sed -i'.bak2' '/server_name localhost;/a \    location \/redirect_me {\n        return 301;\n    }' /etc/nginx/sites-available/default
+# set up a redirection in the location /redirect_me
+REDIRECT_CODE="return 301;"
 
-# Restart nginx
+# append the location block for /redirect_me to the nginx configuration file
+sudo sed -i '/server_name localhost;/a \    location /redirect_me {\n        '"$REDIRECT_CODE"'\n    }' /etc/nginx/sites-available/default
+
+# restart nginx
 sudo service nginx restart
+
