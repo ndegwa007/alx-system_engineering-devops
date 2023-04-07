@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# sets up a redirect
 # set up a redirection in the location /redirect_me
 REDIRECT_CODE="return 301;"
 
