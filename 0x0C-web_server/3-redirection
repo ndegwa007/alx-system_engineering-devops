@@ -1,20 +1,9 @@
 #!/usr/bin/env bash
-# sets up a redirect
+#Configure a new Nginx server so that /redirect_me is redirecting to another page
 
-# update server
 sudo apt-get -y update
-#install nginx on server
 sudo apt-get -y install nginx
-#allow traffic
 sudo ufw allow 'Nginx HTTP'
-#return hello world
-echo 'Hello World' | sudo tee /var/www/html/index
-# set up a redirection in the location /redirect_me
-REDIRECT_CODE="return 301;"
-
-# append the location block for /redirect_me to the nginx configuration file
-sudo sed -i '/server_name localhost;/a \    location /redirect_me {\n        '"$REDIRECT_CODE"'\n    }' /etc/nginx/sites-available/default
-
-# restart nginx
+echo "Hello World" | sudo tee /var/www/html/index
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
-
