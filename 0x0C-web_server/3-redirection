@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 # sets up a redirect
+
+# update server
+sudo apt-get -y update
+#install nginx on server
+sudo apt-get -y install nginx
+#allow traffic
+sudo ufw allow 'Nginx HTTP'
+#return hello world
+echo 'Hello World' | sudo tee /var/www/html/index
 # set up a redirection in the location /redirect_me
 REDIRECT_CODE="return 301;"
 
