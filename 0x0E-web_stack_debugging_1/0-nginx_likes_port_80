@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#script that installs nginx server to listen on port 80
+
+#update
+apt-get update && apt-get upgrade
+
+#installs nginx
+apt-get install -y nginx
+
+#set port variable
+port=80
+
+#set default files backup
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+#write custom default file
+cat << EOF > /etc/nginx/sites-available/default
+server {
+	listen $port default_server;
+	listen [::]:$port default_server;
+	root /var/www/html;
+	index index.html index.htm;
+
+	servername localhost;
+	location / {
+		return 200;
+		}
+}
+EOF
+
+#restart server
+service nginx restart
