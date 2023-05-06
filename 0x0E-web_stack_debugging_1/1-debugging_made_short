@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#script configures nginx to run on port 80
+#script configures nginx to run and listen on port 80
 service nginx start
 curl 0:80
 service nginx status | grep "nginx is not running"
