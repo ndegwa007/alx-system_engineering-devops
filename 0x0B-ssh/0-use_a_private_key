@@ -1,9 +1,3 @@
-#!/usr/bin/env bash
-# script that connects to my server using a private key
-
-# set variables
-server="54.237.94.196"
-user="ubuntu"
-
-#connect via ssh
-ssh -i ~/.ssh/school $user@$server
+#!/usr/bin/env/bash
+#script connects to my server using a private key with user ubuntu
+ssh -i ~/.ssh/school ubuntu@54.210.51.207
