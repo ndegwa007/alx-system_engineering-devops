@@ -1,0 +1,20 @@
+ frontend ndegz-front
+         bind *:80
+	 bind *:443 ssl crt /etc/ssl/www.ndegz.tech/tech.pem
+	 
+	 redirect scheme https code 301 if !{ ssl_fc }
+
+	 # Test URL to see if its a letsencrypt
+	 acl letsencrypt-acl path_beg /.well-known/acme-challenge
+	 use_backend letsencrypt-backend if letsencrypt-acl
+
+         default_backend ndegz-back
+
+backend ndegz-back
+        balance roundrobin
+        server 156072-web-01 54.210.51.207:80 check
+        server 156072-web-02 100.26.238.247:80 check
+
+backend letsencrypt-backend
+	server letsencrypt 127.0.0.1:8888
+
