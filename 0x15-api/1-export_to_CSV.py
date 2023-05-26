@@ -34,8 +34,8 @@ def export_employee_todo_csv(employee_id):
         # Prepare data for CSV export
         csv_data = []
         for todo in todos_data:
-            task_completed_status =
-            "True" if todo['completed'] else "False"
+            task_completed_status = "True" \
+                if todo['completed'] else "False"
             task_title = todo['title']
             csv_data.append([
                 user_id, username, task_completed_status, task_title])
