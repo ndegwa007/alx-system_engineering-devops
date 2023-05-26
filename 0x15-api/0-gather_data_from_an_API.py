@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-# script for get employees progress
+"""a script that shows employees progress completing tasks
+    from all the allocated tasks"""
 import requests
 import sys
 
 
 def get_employee_progress(employee_id):
+    """ get the api url and find employee progress """
+
     base_url = "https://jsonplaceholder.typicode.com"
     employee_url = f"{base_url}/users/{employee_id}"
     todos_url = f"{base_url}/todos?userId={employee_id}"
@@ -27,12 +30,13 @@ def get_employee_progress(employee_id):
 
     # display progress info
     print(f"Employee {employee_name} is done with \
-            tasks({len(completed_tasks)}/{todo_task}):")
+tasks({len(completed_tasks)}/{todo_task}):")
 
     for task in completed_tasks:
-        print(f"\t{task}")
+        print(f"\t {task}")
 
 
 if __name__ == '__main__':
+    """ get the employee progress """
     employee_id = sys.argv[1]
     get_employee_progress(employee_id)
