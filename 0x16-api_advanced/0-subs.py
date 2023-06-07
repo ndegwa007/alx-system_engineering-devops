@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """model - queries the reddit API"""
 
-import json
 import requests
 
 
