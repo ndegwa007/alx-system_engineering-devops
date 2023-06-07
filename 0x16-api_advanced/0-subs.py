@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" function queries the reddit API"""
+"""queries the reddit API"""
 import json
 import requests
 
