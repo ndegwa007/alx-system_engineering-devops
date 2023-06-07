@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-Queries the Reddit API
+model queries the Reddit API
 """
 
 import requests
@@ -20,4 +21,4 @@ def top_ten(subreddit):
         for title in p:
             print(title)
     else:
-        return 0
+        print("None")

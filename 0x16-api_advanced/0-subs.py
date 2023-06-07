@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 model - queries the reddit API
 """
