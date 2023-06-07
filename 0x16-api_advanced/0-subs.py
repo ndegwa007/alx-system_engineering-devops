@@ -5,7 +5,6 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """ returns number of subs from a given reddit """
 
     headers = {'User-Agent': 'super-bot/1.0'}
     response = requests.get(
