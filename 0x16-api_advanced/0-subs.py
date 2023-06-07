@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""queries the reddit API"""
+"""model - queries the reddit API"""
 
 import json
 import requests
