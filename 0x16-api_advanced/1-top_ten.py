@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 
-"""
-model queries the Reddit API
-"""
+"""model queries the Reddit API"""
 
 import requests
 
 
 def top_ten(subreddit):
     """ titles of the first 10 hot posts for a subreddit """
-    headers = {'User-Agent': 'super-bot/1.1'}
+    headers = {'User-Agent': 'super-bot/0.0.1'}
     count = 9
     response = requests.get(
             f"https://www.reddit.com/r/{subreddit}/hot.json?limit={count}",
