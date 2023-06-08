@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-
-"""model - queries the reddit API"""
+"""model - working with reddit api"""
 
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """function gets number of subs in a subreddit"""
-    headers = {"User-Agent": 'super-bot/1.0'}
-    response = requests.get(
-            f"https://www.reddit.com/r/{subreddit}/about.json",
-            headers=headers)
-
+    """ a function to get the number of subscribers of a subreddit"""
+    headers = {"User-Agent": 'my_bot/0.0.1'}
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        response_json = response.json()
-        if 'subscribers' in response_json['data']:
-            return response_json['data']['subscribers']
-    return 0
+        data = response.json()
+        return data["data"]["subscribers"]
+    else:
+        return 0
