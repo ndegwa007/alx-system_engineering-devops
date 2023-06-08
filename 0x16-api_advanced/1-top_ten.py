@@ -1,22 +1,17 @@
 #!/usr/bin/python3
-
-"""model queries the Reddit API"""
-
+"""model - working with reddit api"""
 import requests
 
 
 def top_ten(subreddit):
-    """ titles of the first 10 hot posts for a subreddit """
-    headers = {'User-Agent': 'super-bot/0.0.1'}
-    count = 9
-    response = requests.get(
-            f"https://www.reddit.com/r/{subreddit}/hot.json?limit={count}",
-            headers=headers)
+    """ function to get the first 10 post of a given sub reddit"""
+    headers = {"User-Agent": "Super-bot/0.0,1"}
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        response_json = response.json()
-        posts = response_json['data']['children']
-        p = [post['data']['title'] for post in posts]
-        for title in p:
-            print(title)
+        data = response.json()
+        posts = data['data']['children']
+        for i in range(10):
+            print(posts[i]['data']['title'])
     else:
-        print("None")
+        print(None)
