@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 
-"""
-model - queries the reddit API
-"""
+"""model - queries the reddit API"""
 
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """ function gets number of subs in a subreddit """
-    headers = {'User-Agent': 'super-bot/1.0'}
+    """function gets number of subs in a subreddit"""
+    headers = {"User-Agent": 'super-bot/1.0'}
     response = requests.get(
             f"https://www.reddit.com/r/{subreddit}/about.json",
             headers=headers)

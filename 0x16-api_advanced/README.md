@@ -12,3 +12,8 @@ Practice using the [Reddit API](https://intranet.alxswe.com/rltoken/b-4nD6hwEeNY
 <summary><a href="./1-top_ten.py">1. Top ten</a></summary>
 <a href="https://postimg.cc/G8dBhp1F" target='_blank'><img src='https://i.postimg.cc/gJ63swST/Screenshot-from-2023-06-07-10-37-17.png' border='0' alt='image'/></a>
 </details>
+
+<details>
+<summary><a href="./2-recurse.py">2. Recurse it!</a></summary>
+<a href="https://postimg.cc/RNwrMKwy" target='_blank'><img src='https://i.postimg.cc/PrRdQMJX/Screenshot-from-2023-06-07-16-43-54.png' border='0' alt='image'/></a>
+</details>
