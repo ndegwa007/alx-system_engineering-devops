@@ -8,5 +8,5 @@ exec { 'fix--nginx ulimit':
 
 exec { 'nginx-restart':
   command  => 'nginx restart',
-  provider => shell
+  path     => '/etc/init.d/'
 }
