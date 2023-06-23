@@ -17,4 +17,4 @@
 
 <br>
 Root cause and resolution should be explained in detail.
-Corrective ans preventive measures should state things that can be improved.
+Corrective and preventive measures should state things that can be improved.
